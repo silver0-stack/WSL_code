@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from './bodyParser';
 
 const app=express();//서버 생성
-app.listen(54000,()=>{ //서버 실행
+app.listen(54000,()=>{ //서버 실행.
     console.log('Server running at http://127.0.0.4:54000');
 });
 

@@ -1,7 +1,7 @@
 import express from 'express';
 import http from 'http';
 
-let app=express(); //서버 실행
+let app=express(); //서버 실행.
 let server=http.createServer(app).listen(80);
 
 app.get('./',(req,res)=>{
