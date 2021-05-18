@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>login form</title>
+</head>
+
+<body>
+    <form name="loginForm">
+        <!--로그인 성공하면 네이버로 이동-->
+        <로그인 페이지> <br><br><br>
+            ID : <input type="text" placeholder="ID를 입력하세요" id="userid"><br>
+            <!--value=""로 넣으면 직접 입력되는 거임-->
+            PW : <input type="password" placeholder="PW를 입력하세요" id="userpw"><!-- input 박스 안 글자 넣기 = placeholder -->
+            <input type="button" value="로그인" id="loginButton">
+    </form>
+
+    <!--JAVASCRIPT START-->
+    <script>
+        //window.onload를 가장 위에 위치시켜야 오류 가능성 없음
+        window.onload = function () {
+            console.log(document); //html 태그 전체를 콘솔에 띄어주자.
+
+            let loginButton = document.getElementById("loginButton"); //로그인 버튼을 만들고
+            loginButton.addEventListener('click', loginFunc); //로그인 버튼을 클릭하면 loginFuc 함수 실행한다
+
+            function loginFunc() {
+                let userid = document.getElementById('userid').value; //userid의 값을 받아와 넣는다
+                let userpw = document.getElementById('userpw').value; //userpw의 값을 받아와 넣는다,
+
+                if (userid === 'swu' && userpw === '12345') {
+                    alert('로그인 성공');
+                    console.log('로그인 성공했습니다.');
+                } else if (!userid) {
+                    alert('아이디를 입력해주세요.');
+                    console.log('아이디를 입력해주세요');
+                    document.loginForm.userid.focus();
+                } else if (!userpw) {
+                    alert('비밀번호를 입력해주세요.');
+                    console.log('비밀번호를 입력해주세요');
+                    document.loginForm.userpw.focus();
+                } else {
+                    alert('로그인 실패');
+                    console.log('로그인 실패했습니다.');
+                };
+            };
+        };
+    </script>
+</body>
+
+</html>

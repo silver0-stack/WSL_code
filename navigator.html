@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Navigator</title>
+    <script>
+        // navigator 객체 속성 출력
+        let output = '';
+        output += 'appCodeName: ' + navigator.appCodeName + '\n'; //현재 사용중인 브라우저 코드명
+        output += 'appName: ' + navigator.appName + '\n'; //현재 사용중인 브라우저 이름
+        output += 'appVersion: ' + navigator.appVersion + '\n'; //현재 사용중인 브라우저 버전
+        output += 'platform: ' + navigator.platform + '\n'; //현재 브라우저가 실행되고 있는 운영체제
+        output += 'userAgent: ' + navigator.userAgent + '\n'; //현재 브라우저가 서버 측으로 전송하는 USER-AGENT HTTP의 헤더 내용
+        alert(output);
+
+        //IOS와 안드로이드의 웹 브라우저 구분
+        if (navigator.userAgent.toLowerCase().indexOf('iphone') >= 0
+            || navigator.userAgent.toLowerCase().indexOf('ipad') >= 0
+            || navigator.userAgent.toLowerCase().indexOf('ipod') >= 0
+            || navigator.userAgent.toLowerCase().indexOf('android') >= 0) {
+            alert('모바일 웹 브라우저입니다.');
+        } else {
+            alert('데스크 톱 웹 브라우저입니다.');
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
